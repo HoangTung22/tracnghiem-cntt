@@ -15,7 +15,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:5174"],
+    allow_origins=["http://localhost:5173", "https://vercel.com/noaz/tracnghiem-cntt/5xpgYqmwMF5iKA787fsCYHbFx2PV"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
