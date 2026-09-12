@@ -2,11 +2,14 @@ from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 
-from database import engine
+from database import SessionLocal, engine, Base
 import models
 import schemas
 import auth
-from auth import get_db, get_current_user, require_admin
+from auth import get_db, require_admin, get_current_user
+from routers_content import router as content_router
+
+Base.metadata.create_all(bind=engine)  # <-- Thêm dòng này, tự tạo bảng khi server khởi động
 
 app = FastAPI()
 
